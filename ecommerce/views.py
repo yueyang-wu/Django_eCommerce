@@ -34,10 +34,19 @@ def home(request):
     if request.method == 'POST':
         product_name = request.POST["product_name"]
         print("add {} to shopping cart".format(product_name))
+        if product_name in shopping_cart:
+            shopping_cart[product_name] += 1
+        else:
+            shopping_cart[product_name] = 1
 
     return render(request, 'ecommerce/home.html', {
         'products': products,
     })
 
 def shoppingcart(request):
-    return render(request, 'ecommerce/shoppingcart.html', {'title': 'Shopping Cart'})
+    if request.method == 'POST':
+        product_name = request.POST["product_name"]
+        print(f"delete {product_name} from shopping cart")
+        shopping_cart.pop(product_name)
+
+    return render(request, 'ecommerce/shoppingcart.html', {'title': 'Shopping Cart', 'shopping_cart': shopping_cart})
