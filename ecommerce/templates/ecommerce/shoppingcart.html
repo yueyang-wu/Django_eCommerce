@@ -8,7 +8,9 @@
                 <label>{{ key }}</label>
                 <label>{{ value }}</label>
                 <input type="hidden" name="product_name" value="{{ key }}" id="id_product_name"/>
-                <input type="submit" value="Delete">
+                <input type="text" id="id_amount" name="amount" value="{{ value }}">
+                <button type="submit" name="operation" value="update"> Update </button>
+                <button type="submit" name="operation" value="delete"> Delete </button>
             </form>
         </div>
     {% endfor %}

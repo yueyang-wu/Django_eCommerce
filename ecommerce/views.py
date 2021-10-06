@@ -8,18 +8,21 @@ products = [
         'name': 'Freeze-Dried Nuggets Chicken',
         'size': '14oz',
         'price': '$33.99',
+        'image': 'static/images/PPF-FD-Canine-FD-Chicken14-Front_800x.png',
     },
     {
         'brand': 'Stella & Chewy\'s',
         'name': 'Meal Mixers Freeze-Dried Chicken',
         'size': '18oz',
-        'price': '$39.99'
+        'price': '$39.99',
+        'image': 'static/images/nmzsmhmlercpmdllwnte.png',
     },
     {
         'brand': 'Acana',
         'name': 'Freeze-Dried Patties Chicken',
         'size': '14oz',
-        'price': '$30.49'
+        'price': '$30.49',
+        'image': 'static/images/DS_ACANA_FDF_Free-Run_Chicken_Front_Right_14oz_NEW_556x800.png',
     }
 ]
 
@@ -45,11 +48,20 @@ def home(request):
         'products': products,
     })
 
+
 def shoppingcart(request):
     if request.method == 'POST':
         product_name = request.POST["product_name"]
-        print(f"delete {product_name} from shopping cart")
-        shopping_cart.pop(product_name)
+        amount = request.POST["amount"]
+        operation = request.POST["operation"]
+        if operation == "update":
+            print(f"update {product_name} to {amount}")
+            shopping_cart[product_name] = int(amount)
+        elif operation == "delete":
+            print(f"delete {product_name} from shopping cart")
+            shopping_cart.pop(product_name)
+        else:
+            print(f"error: unknown operation {operation}")
 
     print(shopping_cart)
     return render(request, 'ecommerce/shoppingcart.html', {'title': 'Shopping Cart', 'shopping_cart': shopping_cart})
