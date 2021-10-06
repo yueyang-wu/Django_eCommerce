@@ -35,8 +35,10 @@ def home(request):
         product_name = request.POST["product_name"]
         print("add {} to shopping cart".format(product_name))
         if product_name in shopping_cart:
+            print(f"in: {product_name}")
             shopping_cart[product_name] += 1
         else:
+            print(f"not in: {product_name}")
             shopping_cart[product_name] = 1
 
     return render(request, 'ecommerce/home.html', {
@@ -49,4 +51,5 @@ def shoppingcart(request):
         print(f"delete {product_name} from shopping cart")
         shopping_cart.pop(product_name)
 
+    print(shopping_cart)
     return render(request, 'ecommerce/shoppingcart.html', {'title': 'Shopping Cart', 'shopping_cart': shopping_cart})

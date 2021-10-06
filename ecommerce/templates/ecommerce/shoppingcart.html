@@ -3,11 +3,11 @@
     <h1>Shopping Cart</h1>
     {% for key, value in shopping_cart.items %}
         <div class="media-body">
-            <form action="/" method="post">
+            <form action="/shoppingcart" method="post">
                 {% csrf_token %}
                 <label>{{ key }}</label>
                 <label>{{ value }}</label>
-                <input type="hidden" name="product_name" value="{{ product.name }}" id="id_product_name"/>
+                <input type="hidden" name="product_name" value="{{ key }}" id="id_product_name"/>
                 <input type="submit" value="Delete">
             </form>
         </div>
