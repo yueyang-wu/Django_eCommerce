@@ -8,21 +8,21 @@ products = [
         'name': 'Freeze-Dried Nuggets Chicken',
         'size': '14oz',
         'price': '$33.99',
-        'image': 'static/images/PPF-FD-Canine-FD-Chicken14-Front_800x.png',
+        'image': 'images/PPF-FD-Canine-FD-Chicken14-Front_800x.png',
     },
     {
         'brand': 'Stella & Chewy\'s',
         'name': 'Meal Mixers Freeze-Dried Chicken',
         'size': '18oz',
         'price': '$39.99',
-        'image': 'static/images/nmzsmhmlercpmdllwnte.png',
+        'image': 'images/nmzsmhmlercpmdllwnte.png',
     },
     {
         'brand': 'Acana',
         'name': 'Freeze-Dried Patties Chicken',
         'size': '14oz',
         'price': '$30.49',
-        'image': 'static/images/DS_ACANA_FDF_Free-Run_Chicken_Front_Right_14oz_NEW_556x800.png',
+        'image': 'images/DS_ACANA_FDF_Free-Run_Chicken_Front_Right_14oz_NEW_556x800.png',
     }
 ]
 

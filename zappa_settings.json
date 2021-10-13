@@ -1,0 +1,10 @@
+{
+    "dev": {
+        "django_settings": "basic_ecommerce.settings",
+        "profile_name": "default",
+        "aws_region": "us-west-1",
+        "project_name": "basic-ecommerce",
+        "runtime": "python3.8",
+        "s3_bucket": "zappa-rfauidj7o"
+    }
+}
