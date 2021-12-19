@@ -1,6 +1,6 @@
 # Django_eCommerce
 ## About the Project
-This is a very basic eCommerce website with limited functionalities.<b />
+This is a very basic eCommerce website with limited functionalities.<br />
 The purpose of this project is to
 - learn basic uasge of Django
 - try to deploy a Django app on AWS Lambda using Zappa.
